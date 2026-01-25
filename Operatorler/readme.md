@@ -4,13 +4,14 @@
 ![YouTube](https://img.shields.io/badge/YouTube-Video%20Ders-red)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
-Bu depo, **[Kanal Adınız Buraya]** YouTube kanalında yayınlanan **"SQL Server Operatörleri"** eğitim videosunun kaynak kodlarını, örnek veritabanı senaryolarını ve ders notlarını içerir.
+Bu depo, ** @TamerYavuzz ** YouTube kanalında yayınlanan **"SQL Server Operatörleri"** eğitim videosunun kaynak kodlarını, örnek veritabanı senaryolarını ve ders notlarını içerir.
 
 ## 📺 Eğitim Videosu
 Projeyi uygulamalı olarak izlemek için:  
 
 [![Video Başlığı](https://img.youtube.com/vi/05qpFmt-4wk/0.jpg)](https://www.youtube.com/watch?v=05qpFmt-4wk)  
-
+  
+  
 *(Yukarıdaki görsele tıklayarak videoya gidebilirsiniz)*
 ---
 
