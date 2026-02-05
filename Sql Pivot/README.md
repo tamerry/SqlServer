@@ -30,7 +30,7 @@ text
 Net Ciro = (İşlem Yönü * (Brüt Tutar - (Satır İskonto + Genel İskonto)))
 
 
-⚙️ Sorgu Mantığı
+## ⚙️ Sorgu Mantığı
 Sorgu 3 ana aşamadan oluşur:
 
 1. Veri Birleştirme (UNION ALL)
@@ -47,7 +47,7 @@ Kaynak: ANASORGU
 
 Hedef Sütunlar: [TÜRKİYE], [ULKE1], [ULKE2]
 
-3. Çıktı Formatlama
+## 3. Çıktı Formatlama
 Sonuç tablosu #SatisRaporu adında geçici bir tabloya (Temp Table) yazılır. Para birimleri eklenir:
 text
 Türkiye -> TL
@@ -56,14 +56,14 @@ Türkiye -> TL
 
 Ülke 2 (Eu zone) -> €
 
-⚠️ Önemli Notlar
+## ⚠️ Önemli Notlar
 Tarih Formatı: Tarihler dd.mm.yyyy (Convert 104) formatında gelir.
 
 Dil Ayarları: FORMAT fonksiyonu tr-TR kültürünü kullanır. Sunucu dil ayarlarından bağımsız olarak Türkçe formatlama yapar.
 
 Geçici Tablo: Script her çalıştığında DROP TABLE komutu ile önceki #SatisRaporu tablosunu siler ve yeniden oluşturur.
 
-💻 Kurulum ve Çalıştırma
+## 💻 Kurulum ve Çalıştırma
 SQL Server Management Studio (SSMS) uygulamasını açın.
 
 Yeni bir sorgu penceresi (New Query) oluşturun.
