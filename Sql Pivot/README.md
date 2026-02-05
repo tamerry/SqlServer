@@ -26,8 +26,8 @@ Bu scriptin hatasız çalışması için SQL Server ortamında aşağıdaki tan�
 
 Satış verileri çekilirken aşağıdaki formül kullanılır:
 
-sql
-Net Ciro = (İşlem Yönü * (Brüt Tutar - (Satır İskonto + Genel İskonto)))
+```text
+Net Ciro = (İşlem Yönü * (Brüt Tutar - (Satır İskonto + Genel İskonto)))```
 
 
 ⚙️ Sorgu Mantığı
@@ -36,9 +36,10 @@ Sorgu 3 ana aşamadan oluşur:
 1. Veri Birleştirme (UNION ALL)
 Her üç kaynaktan aşağıdaki formül ile Net Satış hesaplanır:
 
-```SQL
+```sql
 NetSatış = (Yön * (Brüt Tutar - (Satır İskonto + Genel İskonto)))
--- Yön: PTYPE 2 ise (İade) -1, değilse +1```
+Yön: PTYPE 2 ise (İade) -1, değilse +1```
+
 2. Pivot İşlemi
 Alt alta gelen veriler (Satırlar), ülke isimlerine göre yan yana sütunlara (Columns) dönüştürülür.
 
@@ -53,7 +54,7 @@ Türkiye -> TL
 
 Ülke 1 -> TL
 
-Ülke 2 (KSV) -> €```
+Ülke 2 (Eu zone) -> €```
 
 ⚠️ Önemli Notlar
 Tarih Formatı: Tarihler dd.mm.yyyy (Convert 104) formatında gelir.
