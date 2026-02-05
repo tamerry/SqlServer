@@ -26,8 +26,8 @@ Bu scriptin hatasız çalışması için SQL Server ortamında aşağıdaki tan�
 
 Satış verileri çekilirken aşağıdaki formül kullanılır:
 
-```text
-Net Ciro = (İşlem Yönü * (Brüt Tutar - (Satır İskonto + Genel İskonto)))```
+text
+Net Ciro = (İşlem Yönü * (Brüt Tutar - (Satır İskonto + Genel İskonto)))
 
 
 ⚙️ Sorgu Mantığı
