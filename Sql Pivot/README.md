@@ -36,9 +36,9 @@ Sorgu 3 ana aşamadan oluşur:
 1. Veri Birleştirme (UNION ALL)
 Her üç kaynaktan aşağıdaki formül ile Net Satış hesaplanır:
 
-```sql
+
 NetSatış = (Yön * (Brüt Tutar - (Satır İskonto + Genel İskonto)))
-Yön: PTYPE 2 ise (İade) -1, değilse +1```
+Yön: PTYPE 2 ise (İade) -1, değilse +1
 
 2. Pivot İşlemi
 Alt alta gelen veriler (Satırlar), ülke isimlerine göre yan yana sütunlara (Columns) dönüştürülür.
@@ -49,12 +49,12 @@ Hedef Sütunlar: [TÜRKİYE], [ULKE1], [ULKE2]
 
 3. Çıktı Formatlama
 Sonuç tablosu #SatisRaporu adında geçici bir tabloya (Temp Table) yazılır. Para birimleri eklenir:
-```text
+text
 Türkiye -> TL
 
 Ülke 1 -> TL
 
-Ülke 2 (Eu zone) -> €```
+Ülke 2 (Eu zone) -> €
 
 ⚠️ Önemli Notlar
 Tarih Formatı: Tarihler dd.mm.yyyy (Convert 104) formatında gelir.
@@ -72,5 +72,5 @@ Kodları yapıştırın ve F5 tuşuna basarak çalıştırın.
 
 Sonuçları görmek için scriptin en altına şu satırı ekleyebilirsiniz:
 
-```sql
-SELECT * FROM #SatisRaporu```
+sql
+SELECT * FROM #SatisRaporu
