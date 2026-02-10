@@ -43,7 +43,18 @@ Sistemin arka plandaki akışı şöyledir:
 
 ```mermaid
 graph TD
-    A[Kullanıcı İşlemi] --> B(SQL Server Motoru)
-    B --> C{Otomatik Trigger Devrede mi?}
-    C -- Evet --> D[Değişikliği Yakala]
-    D --> E[Eski ve
+    A[Kullanıcı / Uygulama] -->|DELETE veya UPDATE Komutu| B(SQL Server Motoru)
+    B --> C{Trigger Var mı?}
+    C -- Evet --> D[Trigger Tetiklenir]
+    
+    
+    subgraph "Trigger İçindeki İşlemler"
+    D --> E[Sanal Tabloları Oku: DELETED & INSERTED]
+    E --> F[Veriyi JSON Formatına Çevir]
+    F --> G[Kullanıcı ve Bilgisayar Bilgisini Al]
+    end
+    
+    G --> H[(AuditLog Tablosuna Kaydet)]
+    H --> I{Mail Atılacak mı?}
+    I -- Evet --> J[Yöneticiye E-Posta Gönder]
+    I -- Hayır --> K[İşlemi Bitir]
