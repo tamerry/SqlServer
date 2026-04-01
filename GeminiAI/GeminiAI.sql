@@ -87,5 +87,5 @@ BEGIN
     DROP TABLE #GeminiTemp;
 END
 GO
-
+--kullanım
 EXEC sp_AnalyzeTableDataWithAI 'SELECT * FROM [HumanResources].[vEmployee]';
