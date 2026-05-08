@@ -5,7 +5,7 @@ BEGIN
     SET NOCOUNT ON;
 
     -- UYARI: Kendi API anahtarınızı buraya yazın!
-    DECLARE @ApiKey VARCHAR(100) = '';
+    DECLARE @ApiKey VARCHAR(100) = 'AIzaSyB_8gQdaddx3EfyKa96SqYMtbpKWiaNceE';
     DECLARE @DataAsJson NVARCHAR(MAX);
     DECLARE @Base64Prompt VARCHAR(MAX);
     DECLARE @cmd VARCHAR(8000);
@@ -32,7 +32,7 @@ BEGIN
     -- Boşlukları temizle
     SET @Base64Prompt = REPLACE(REPLACE(@Base64Prompt, CHAR(10), ''), CHAR(13), '');
 
-    -- GÜVENLİK 
+    -- KArakter sınırını kontrol et
     IF LEN(@Base64Prompt) > 7200
     BEGIN
         PRINT 'HATA: Veri cok buyuk! Kapasite asildi (' + CAST(LEN(@Base64Prompt) AS VARCHAR) + ' karakter). Lutfen sorgunuzda daha az sutun secin.';
@@ -56,7 +56,8 @@ BEGIN
     INSERT INTO #GeminiTemp (LineText)
     EXEC xp_cmdshell @cmd;
 
-    -- 6. Sonucu Göster )
+    -- 6. Sonucu Göster (PRINT İLE EKRANA BASMA)
+    IF EXISTS (SELECT 1 FROM #GeminiTemp WHERE LineText IS NOT NULL)
     BEGIN
         DECLARE @i INT = 1;
         DECLARE @max INT = (SELECT MAX(ID) FROM #GeminiTemp);
@@ -66,7 +67,7 @@ BEGIN
         PRINT '         AI VERİ ANALİZ RAPORU                 ';
         PRINT '==================================================';
 
-        
+        -- 
         WHILE @i <= @max
         BEGIN
             SELECT @line = LineText FROM #GeminiTemp WHERE ID = @i;
